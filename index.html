@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maternal Health Records</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header section with Logout -->
+    <header class="d-flex justify-content-between align-items-center p-3 bg-light">
+        <h1>Maternal Health Records</h1>
+        <a href="login.html" class="btn btn-secondary">Logout</a>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Maternal Health Records</h3>
+        </div>
+        <ul class="list-unstyled components">
+            <li><a href="#" onclick="showSection('patient-info')">Patient Info</a></li>
+            <li><a href="#" onclick="showSection('lifestyle')">Lifestyle</a></li>
+            <li><a href="#" onclick="showSection('social-conditions')">Social Conditions</a></li>
+            <li><a href="#" onclick="showSection('medical-history')">Medical History</a></li>
+            <li><a href="#" onclick="showSection('pregnancy-details')">Pregnancy Details</a></li>
+            <li><a href="#" onclick="showSection('contraceptive-history')">Contraceptive History</a></li>
+            <li><a href="#" onclick="showSection('previous-pregnancies')">Previous Pregnancies</a></li>
+            <li><a href="#" onclick="showSection('medications')">Medications</a></li>
+            <li><a href="#" onclick="showSection('follow-up')">Follow-up</a></li>
+            <li><a href="#" onclick="showSection('risk-factors')">Risk Factors</a></li>
+            <li><a href="#" onclick="showSection('lab-results')">Lab Results</a></li>
+            <li><a href="#" onclick="showSection('delivery-details')">Delivery Details</a></li>
+            <li><a href="#" onclick="showSection('partogram')">Partogram</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div id="content">
+        <div class="container">
+            <!-- Patient Info Module -->
+            <section id="patient-info" class="module-section">
+                <h2>Patient Information</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="patientId">Patient ID:</label>
+                        <input type="text" class="form-control" id="patientId" placeholder="Enter patient ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter patient name">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter address">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="careUnit">Care Unit:</label>
+                        <input type="text" class="form-control" id="careUnit" placeholder="Enter care unit">
+                    </div>
+                    <div class="form-group">
+                        <label for="careUnitAddress">Care Unit Address:</label>
+                        <input type="text" class="form-control" id="careUnitAddress" placeholder="Enter care unit address">
+                    </div>
+                    <div class="form-group">
+                        <label for="caregiver">Caregiver:</label>
+                        <input type="text" class="form-control" id="caregiver" placeholder="Enter caregiver name">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Lifestyle Module -->
+            <section id="lifestyle" class="module-section" style="display:none;">
+                <h2>Lifestyle</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg):</label>
+                        <input type="number" class="form-control" id="weight" placeholder="Enter weight">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" class="form-control" id="height" placeholder="Enter height">
+                    </div>
+                    <div class="form-group">
+                        <label for="bmi">BMI:</label>
+                        <input type="text" class="form-control" id="bmi" placeholder="Enter BMI">
+                    </div>
+                    <div class="form-group">
+                        <label for="smoking">Smoking:</label>
+                        <input type="checkbox" id="smoking">
+                    </div>
+                    <div class="form-group">
+                        <label for="alcohol">Alcohol Consumption:</label>
+                        <input type="text" class="form-control" id="alcohol" placeholder="Enter alcohol consumption">
+                    </div>
+                    <div class="form-group">
+                        <label for="snus">Snus (Tobacco):</label>
+                        <input type="text" class="form-control" id="snus" placeholder="Enter snus usage">
+                    </div>
+                    <div class="form-group">
+                        <label for="physicalActivity">Physical Activity:</label>
+                        <input type="text" class="form-control" id="physicalActivity" placeholder="Enter physical activity level">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Social Conditions Module -->
+            <section id="social-conditions" class="module-section" style="display:none;">
+                <h2>Social Conditions</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="maritalStatus">Marital Status:</label>
+                        <input type="text" class="form-control" id="maritalStatus" placeholder="Enter marital status">
+                    </div>
+                    <div class="form-group">
+                        <label for="livingSituation">Living Situation:</label>
+                        <input type="text" class="form-control" id="livingSituation" placeholder="Enter living situation">
+                    </div>
+                    <div class="form-group">
+                        <label for="occupation">Occupation:</label>
+                        <input type="text" class="form-control" id="occupation" placeholder="Enter occupation">
+                    </div>
+                    <div class="form-group">
+                        <label for="familyHistory">Family History:</label>
+                        <input type="text" class="form-control" id="familyHistory" placeholder="Enter family medical history">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Medical History Module -->
+            <section id="medical-history" class="module-section" style="display:none;">
+                <h2>Medical History</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="currentPsychCondition">Current Psychological Condition:</label>
+                        <input type="text" class="form-control" id="currentPsychCondition" placeholder="Enter condition">
+                    </div>
+                    <div class="form-group">
+                        <label for="previousPsychCondition">Previous Psychological Condition:</label>
+                        <input type="text" class="form-control" id="previousPsychCondition" placeholder="Enter condition">
+                    </div>
+                    <div class="form-group">
+                        <label for="familyHistoryAnemia">Family History of Anemia:</label>
+                        <input type="checkbox" id="familyHistoryAnemia">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Pregnancy Details Module -->
+            <section id="pregnancy-details" class="module-section" style="display:none;">
+                <h2>Pregnancy Details</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="fetalHeartRate">Fetal Heart Rate:</label>
+                        <input type="text" class="form-control" id="fetalHeartRate" placeholder="Enter fetal heart rate">
+                    </div>
+                    <div class="form-group">
+                        <label for="amnioticFluid">Amniotic Fluid:</label>
+                        <input type="text" class="form-control" id="amnioticFluid" placeholder="Enter amniotic fluid details">
+                    </div>
+                    <div class="form-group">
+                        <label for="fetalMovements">Fetal Movements:</label>
+                        <input type="text" class="form-control" id="fetalMovements" placeholder="Enter fetal movements">
+                    </div>
+                    <div class="form-group">
+                        <label for="placentaPosition">Placenta Position:</label>
+                        <input type="text" class="form-control" id="placentaPosition" placeholder="Enter placenta position">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Contraceptive History Module -->
+            <section id="contraceptive-history" class="module-section" style="display:none;">
+                <h2>Contraceptive History</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="stoppedContraceptive">Stopped Contraceptive:</label>
+                        <input type="checkbox" id="stoppedContraceptive">
+                    </div>
+                    <div class="form-group">
+                        <label for="spiralRemoved">Spiral Removed:</label>
+                        <input type="checkbox" id="spiralRemoved">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Previous Pregnancies Module -->
+            <section id="previous-pregnancies" class="module-section" style="display:none;">
+                <h2>Previous Pregnancies</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="year">Year of Previous Pregnancy:</label>
+                        <input type="number" class="form-control" id="year" placeholder="Enter year">
+                    </div>
+                    <div class="form-group">
+                        <label for="vaginalDelivery">Vaginal Delivery:</label>
+                        <input type="checkbox" id="vaginalDelivery">
+                    </div>
+                    <div class="form-group">
+                        <label for="babyWeight">Baby Weight (kg):</label>
+                        <input type="number" class="form-control" id="babyWeight" placeholder="Enter baby weight">
+                    </div>
+                    <div class="form-group">
+                        <label for="babyLength">Baby Length (cm):</label>
+                        <input type="number" class="form-control" id="babyLength" placeholder="Enter baby length">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <input type="text" class="form-control" id="gender" placeholder="Enter gender of baby">
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryType">Delivery Type:</label>
+                        <input type="text" class="form-control" id="deliveryType" placeholder="Enter delivery type">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Medications Module -->
+            <section id="medications" class="module-section" style="display:none;">
+                <h2>Medications</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="medications">Medications:</label>
+                        <input type="text" class="form-control" id="medications" placeholder="Enter medications">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Follow-up Module -->
+            <section id="follow-up" class="module-section" style="display:none;">
+                <h2>Follow-up</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="followupDate">Follow-up Date:</label>
+                        <input type="date" class="form-control" id="followupDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="midwifeNotes">Midwife Notes:</label>
+                        <input type="text" class="form-control" id="midwifeNotes" placeholder="Enter midwife notes">
+                    </div>
+                    <div class="form-group">
+                        <label for="bloodResults">Blood Results:</label>
+                        <input type="text" class="form-control" id="bloodResults" placeholder="Enter blood results">
+                    </div>
+                    <div class="form-group">
+                        <label for="ultrasoundDetails">Ultrasound Details:</label>
+                        <input type="text" class="form-control" id="ultrasoundDetails" placeholder="Enter ultrasound details">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Risk Factors Module -->
+            <section id="risk-factors" class="module-section" style="display:none;">
+                <h2>Risk Factors</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="smokingRisk">Smoking:</label>
+                        <input type="checkbox" id="smokingRisk">
+                    </div>
+                    <div class="form-group">
+                        <label for="alcoholRisk">Alcohol:</label>
+                        <input type="text" class="form-control" id="alcoholRisk" placeholder="Enter alcohol risk">
+                    </div>
+                    <div class="form-group">
+                        <label for="bloodPressure">Blood Pressure:</label>
+                        <input type="text" class="form-control" id="bloodPressure" placeholder="Enter blood pressure">
+                    </div>
+                    <div class="form-group">
+                        <label for="anemia">Anemia:</label>
+                        <input type="checkbox" id="anemia">
+                    </div>
+                    <div class="form-group">
+                        <label for="preEclampsia">Pre-eclampsia:</label>
+                        <input type="checkbox" id="preEclampsia">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Lab Results Module -->
+            <section id="lab-results" class="module-section" style="display:none;">
+                <h2>Lab Results</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="ferritin">Ferritin (ng/mL):</label>
+                        <input type="number" class="form-control" id="ferritin" placeholder="Enter ferritin level">
+                    </div>
+                    <div class="form-group">
+                        <label for="tsh">TSH (mIU/L):</label>
+                        <input type="number" class="form-control" id="tsh" placeholder="Enter TSH level">
+                    </div>
+                    <div class="form-group">
+                        <label for="freeThyroxine">Free Thyroxine (ng/dL):</label>
+                        <input type="number" class="form-control" id="freeThyroxine" placeholder="Enter free thyroxine level">
+                    </div>
+                    <div class="form-group">
+                        <label for="rhFactor">Rh Factor:</label>
+                        <input type="text" class="form-control" id="rhFactor" placeholder="Enter Rh factor">
+                    </div>
+                    <div class="form-group">
+                        <label for="rubellaImmunity">Rubella Immunity:</label>
+                        <input type="text" class="form-control" id="rubellaImmunity" placeholder="Enter rubella immunity status">
+                    </div>
+                    <div class="form-group">
+                        <label for="syphilis">Syphilis:</label>
+                        <input type="text" class="form-control" id="syphilis" placeholder="Enter syphilis test result">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Delivery Details Module -->
+            <section id="delivery-details" class="module-section" style="display:none;">
+                <h2>Delivery Details</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="deliveryType">Delivery Type:</label>
+                        <input type="text" class="form-control" id="deliveryType" placeholder="Enter delivery type">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate">Birth Date:</label>
+                        <input type="date" class="form-control" id="birthDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthTime">Birth Time:</label>
+                        <input type="time" class="form-control" id="birthTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="gestationalWeek">Gestational Week:</label>
+                        <input type="text" class="form-control" id="gestationalWeek" placeholder="Enter gestational week">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthWeight">Birth Weight (kg):</label>
+                        <input type="number" class="form-control" id="birthWeight" placeholder="Enter birth weight">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthLength">Birth Length (cm):</label>
+                        <input type="number" class="form-control" id="birthLength" placeholder="Enter birth length">
+                    </div>
+                    <div class="form-group">
+                        <label for="headCircumference">Head Circumference (cm):</label>
+                        <input type="number" class="form-control" id="headCircumference" placeholder="Enter head circumference">
+                    </div>
+                    <div class="form-group">
+                        <label for="apgarScoreOneMinute">Apgar Score (1 Minute):</label>
+                        <input type="number" class="form-control" id="apgarScoreOneMinute" placeholder="Enter Apgar score at 1 minute">
+                    </div>
+                    <div class="form-group">
+                        <label for="apgarScoreFiveMinutes">Apgar Score (5 Minutes):</label>
+                        <input type="number" class="form-control" id="apgarScoreFiveMinutes" placeholder="Enter Apgar score at 5 minutes">
+                    </div>
+                    <div class="form-group">
+                        <label for="apgarScoreTenMinutes">Apgar Score (10 Minutes):</label>
+                        <input type="number" class="form-control" id="apgarScoreTenMinutes" placeholder="Enter Apgar score at 10 minutes">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Partogram Module -->
+            <section id="partogram" class="module-section" style="display:none;">
+                <h2>Partogram</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="time">Time:</label>
+                        <input type="time" class="form-control" id="time">
+                    </div>
+                    <div class="form-group">
+                        <label for="cervicalDilation">Cervical Dilation (cm):</label>
+                        <input type="number" class="form-control" id="cervicalDilation" placeholder="Enter cervical dilation">
+                    </div>
+                    <div class="form-group">
+                        <label for="fetalHeartRatePartogram">Fetal Heart Rate:</label>
+                        <input type="text" class="form-control" id="fetalHeartRatePartogram" placeholder="Enter fetal heart rate">
+                    </div>
+                    <div class="form-group">
+                        <label for="contractionsStrength">Contractions Strength:</label>
+                        <input type="text" class="form-control" id="contractionsStrength" placeholder="Enter contractions strength">
+                    </div>
+                    <div class="form-group">
+                        <label for="fetalHeadDescent">Fetal Head Descent:</label>
+                        <input type="text" class="form-control" id="fetalHeadDescent" placeholder="Enter fetal head descent">
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to show only the clicked section
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.module-section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';  // Hide all sections
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Show the first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('patient-info');  // Show Patient Info section by default
+        });
+    </script>
+
+    <script src="js/crud.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
